@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+
+ // navbar customization
+
+ .navbar .navbar-brand {
+   font-family: 'Oleo Script', cursive;
+   font-size: 28px;
+   color: #007bff;
+ }
