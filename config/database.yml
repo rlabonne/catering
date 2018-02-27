@@ -83,5 +83,3 @@ production:
   database: catering_production
   username: catering
   password: <%= ENV['CATERING_DATABASE_PASSWORD'] %>
-
-host: localhost
