@@ -60,3 +60,5 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'figaro'
 
 gem 'devise'
+
+ 
