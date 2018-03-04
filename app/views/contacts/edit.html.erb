@@ -1,2 +1,6 @@
-<h1>Contacts#edit</h1>
-<p>Find me in app/views/contacts/edit.html.erb</p>
+<h1>Edit Contact</h1>
+<div class="row">
+  <div class="col-md-8">
+      <%= render partial: 'form', locals: { contact: @contact } %>
+    </div>
+</div>

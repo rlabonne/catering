@@ -1,0 +1,33 @@
+<%= form_for [contact] do |f| %>
+  <% if contact.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(contact.errors.count, "error") %>.</h4>
+      <ul>
+        <% contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_group_tag(contact.errors[:firstName]) do %>
+    <%= f.label :firstName %>
+    <%= f.text_field :firstName, class: 'form-control', placeholder: "Enter first name" %>
+  <% end %>
+  <%= form_group_tag(contact.errors[:lastName]) do %>
+    <%= f.label :lastName %>
+    <%= f.text_field :lastName, class: 'form-control', placeholder: "Enter last name" %>
+  <% end %>
+  <%= form_group_tag(contact.errors[:company]) do %>
+    <%= f.label :company %>
+    <%= f.text_field :company, class: 'form-control', placeholder: "Enter company name" %>
+  <% end %>
+
+
+  <%= form_group_tag(contact.errors[:notes]) do %>
+    <%= f.label :notes %>
+    <%= f.text_area :notes, rows: 8, class: 'form-control', placeholder: "Enter any relevant notes" %>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div>
+<% end %>

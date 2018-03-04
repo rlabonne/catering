@@ -1,2 +1,19 @@
-<h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<h1>Contact Details</h1>
+<div class="row">
+  <div class="col-md-8">
+    <p>Name: <%= @contact.firstName %> <%= @contact.lastName %></p>
+    <p>Company: <%= @contact.company %></p>
+    <p>Phone 1: <%= @contact.phone1 %></p>
+    <p>Phone 2: <%= @contact.phone2 %></p>
+    <p>Email: <%= @contact.email %></p>
+    <p>Address Line 1: <%= @contact.address1 %></p>
+    <p>Address Line 2: <%= @contact.address2 %></p>
+    <p>City: <%= @contact.city %></p>
+    <p>State: <%= @contact.state %></p>
+    <p>Zipcode: <%= @contact.zipcode %></p>
+    <p>Notes: <%= @contact.notes %></p>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Edit", edit_contact_path(@contact), class: 'btn btn-success' %>
+  </div>
+</div>
