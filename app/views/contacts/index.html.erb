@@ -1,12 +1,12 @@
-<h1>Contacts#index</h1>
-<p>Find me in app/views/contacts/index.html.erb</p>
+<h1>Contacts</h1>
+<p> </p>
 <div class="row">
   <div class="col-md-10">
     <% @contacts.each do |contact| %>
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-              <%= link_to contact.firstName, contact %>
+              <%= link_to contact.lastName, contact %>, <%= link_to contact.firstName, contact %> 
           </h4>
         </div>
       </div>
