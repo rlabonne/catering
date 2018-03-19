@@ -1,12 +1,13 @@
 <h1>Contacts</h1>
 <p> </p>
+<%= link_to "New Contact", new_contact_path(@contact), class: 'btn btn-success' %>
 <div class="row">
   <div class="col-md-10">
     <% @contacts.each do |contact| %>
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-              <%= link_to contact.lastName, contact %>, <%= link_to contact.firstName, contact %> 
+              <%= link_to contact.firstName, contact %> <%= link_to contact.lastName, contact %>
           </h4>
         </div>
       </div>
