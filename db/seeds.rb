@@ -21,7 +21,7 @@ user.save!
 users = User.all
 
 # Create Contacts
-15.times do
+30.times do
   Contact.create!(
     user: users.sample,
     firstName:  Faker::Name.first_name,
@@ -39,5 +39,22 @@ users = User.all
   )
 end
 contacts = Contact.all
+
+# Create Items
+50.times do
+  Item.create!(
+    user: users.sample,
+    name: Faker::Food.dish,
+    description: Faker::Food.ingredient,
+    category: Faker::Dessert.variety,
+    yieldQty: Faker::Number.decimal(2),
+    yieldUnit: Faker::Measurement.weight("none"),
+    servingQty: Faker::Number.between(10, 20),
+    price: Faker::Number.decimal(2),
+    priceUnit: "each",
+    notes: Faker::Dessert.topping
+  )
+end
+items = Item.all
 
 puts "Seed finished"
