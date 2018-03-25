@@ -27,12 +27,17 @@
           <li class="nav-link">
             <%= link_to "Items", items_path %>
           </li>
+          <li class="nav-link">
+            <%= link_to "Orders", orders_path %>
+          </li>
           <% if user_signed_in? %>
-            <li class="nav-link">
-              <%= link_to 'Edit Profile', edit_user_registration_path %>
-            </li>
-            <li class="nav-link">
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= octicon "gear" %></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-item"><%= link_to 'Edit Profile', edit_user_registration_path %></div>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></div>
+              </div>
             </li>
           <% else %>
             <li class="nav-link">

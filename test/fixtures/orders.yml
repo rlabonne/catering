@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderNum: 1
+  orderTotal: MyString
+  category: MyString
+  paymentStatus: false
+  receiptNum: 1
+  delivery: false
+  deliveryDate: 2018-03-25
+  orderStatus: MyString
+  user: one
+
+two:
+  orderNum: 1
+  orderTotal: MyString
+  category: MyString
+  paymentStatus: false
+  receiptNum: 1
+  delivery: false
+  deliveryDate: 2018-03-25
+  orderStatus: MyString
+  user: two

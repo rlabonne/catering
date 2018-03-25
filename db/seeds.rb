@@ -57,4 +57,20 @@ contacts = Contact.all
 end
 items = Item.all
 
+# Create Orders
+10.times do
+  Order.create!(
+    user: users.sample,
+    orderNum: Faker::Number.number(5),
+    orderTotal: Faker::Number.decimal(2),
+    category: "Catering",
+    paymentStatus: true,
+    receiptNum: Faker::Number.number(5),
+    delivery: true,
+    deliveryDate: "2018-03-26",
+    orderStatus: "Pending"
+  )
+end
+orders = Order.all
+
 puts "Seed finished"

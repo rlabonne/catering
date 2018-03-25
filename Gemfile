@@ -62,3 +62,7 @@ gem 'figaro'
 gem 'devise'
 
 gem 'faker'
+
+gem 'octicons'
+
+gem 'octicons_helper'
