@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
     @item.price = params[:item][:price]
     @item.priceUnit = params[:item][:priceUnit]
     @item.notes = params[:item][:notes]
+    @item.user = current_user
 
     if @item.save
       flash[:notice] = "Item was updated."
