@@ -26,10 +26,10 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      flash[:notice] = "Item was updated."
+      flash[:notice] = "Item successfully created."
       redirect_to @item
     else
-      flash.now[:alert] = "There was an error saving the item. Please try again."
+      flash.now[:alert] = "There was an error creating the item. Please try again."
       render :edit
     end
   end

@@ -1,0 +1,48 @@
+<%= form_for [order] do |f| %>
+  <% if order.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(order.errors.count, "error") %>.</h4>
+      <ul>
+        <% order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_group_tag(order.errors[:orderNum]) do %>
+    <%= f.label :orderNum %>
+    <%= f.text_field :orderNum, class: 'form-control', placeholder: "Enter order number" %>
+  <% end %>
+  <%= form_group_tag(order.errors[:orderTotal]) do %>
+    <%= f.label :orderTotal %>
+    <%= f.text_field :orderTotal, class: 'form-control', placeholder: "Enter order total" %>
+  <% end %>
+  <%= form_group_tag(order.errors[:category]) do %>
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control', placeholder: "Enter category name" %>
+  <% end %>
+  <%= form_group_tag(order.errors[:paymentStatus]) do %>
+      <%= f.label "Paid" %>
+      <%= f.check_box :paymentStatus, class: 'form-control' %>
+  <% end %>
+  <%= form_group_tag(order.errors[:receiptNum]) do %>
+    <%= f.label :receiptNum %>
+    <%= f.text_field :receiptNum, class: 'form-control', placeholder: "Enter receipt number" %>
+  <% end %>
+  <%= form_group_tag(order.errors[:delivery]) do %>
+      <%= f.label "Delivery" %>
+      <%= f.check_box :delivery, class: 'form-control' %>
+  <% end %>
+  <%= form_group_tag(order.errors[:deliveryDate]) do %>
+    <%= f.label :deliveryDate %>
+    <%= f.text_field :deliveryDate, class: 'form-control', placeholder: "Enter delivery date" %>
+  <% end %>
+  <%= form_group_tag(order.errors[:orderStatus]) do %>
+    <%= f.label :orderStatus %>
+    <%= f.text_field :orderStatus, class: 'form-control', placeholder: "Enter order status" %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div>
+<% end %>

@@ -1,2 +1,6 @@
-<h1>Orders#edit</h1>
-<p>Find me in app/views/orders/edit.html.erb</p>
+<h1>Edit Order</h1>
+<div class="row">
+  <div class="col-md-8">
+      <%= render partial: 'form', locals: { order: @order } %>
+    </div>
+</div>

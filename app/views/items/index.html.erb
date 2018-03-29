@@ -1,16 +1,24 @@
 <h1>Items</h1>
 <p> </p>
 <%= link_to "New Item", new_item_path(@item), class: 'btn btn-success' %>
-<div class="row">
-  <div class="col-md-10">
+<p></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @items.each do |item| %>
-      <div class="media">
-        <div class="media-body">
-          <h4 class="media-heading">
-              <%= link_to item.name, item %>
-          </h4>
-        </div>
-      </div>
+      <tr>
+        <th scope="row"><%= link_to item.name, item %></th>
+        <td><%= item.category %></td>
+        <td><%= item.price %></td>
+        <td><%= item.priceUnit %></td>
+      </tr>
     <% end %>
-  </div>
-</div>
+  </tbody>
+</table>
